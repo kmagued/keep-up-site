@@ -1,0 +1,59 @@
+:root {
+  --bg: #f5f6ff;
+  --card: #ffffff;
+  --ink: #16163a;
+  --muted: #5b5e8c;
+  --brand: #4f46e5;
+  --lime: #c8f169;
+  --rule: #e4e5f7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0f24;
+    --card: #1a1b3a;
+    --ink: #eef0ff;
+    --muted: #a3a6d0;
+    --brand: #8c85ff;
+    --rule: #2a2c55;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.65 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main { max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
+a { color: var(--brand); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); font-weight: 800; font-size: 20px; letter-spacing: -0.01em; }
+.brand svg { width: 44px; height: 44px; border-radius: 12px; flex: none; }
+
+h1 { font-size: clamp(34px, 7vw, 46px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 800; margin: 44px 0 14px; text-wrap: balance; }
+h2 { font-size: 21px; line-height: 1.3; letter-spacing: -0.01em; font-weight: 800; margin: 40px 0 8px; }
+p, li { margin: 0 0 12px; }
+ul { padding-left: 1.2em; margin: 0 0 12px; }
+li { padding-left: 2px; }
+.lede { font-size: 19px; color: var(--muted); max-width: 34em; }
+.meta { color: var(--muted); font-size: 15px; }
+
+/* The short version: the one place the page raises its voice. */
+.summary { margin: 28px 0 8px; padding: 22px 24px; background: #4f46e5; color: #fff; border-radius: 22px; }
+.summary h2 { margin: 0 0 6px; color: #fff; }
+.summary p { margin: 0; color: #e3e1ff; }
+.summary strong { color: var(--lime); font-weight: 700; }
+
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 18px; padding: 4px 22px; margin: 18px 0; }
+.card details { border-top: 1px solid var(--rule); padding: 14px 0; }
+.card details:first-child { border-top: 0; }
+.card summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.card summary::-webkit-details-marker { display: none; }
+.card summary::after { content: '+'; color: var(--brand); font-weight: 800; }
+.card details[open] summary::after { content: '–'; }
+.card details p { margin: 10px 0 0; color: var(--muted); }
+
+footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: var(--muted); }
